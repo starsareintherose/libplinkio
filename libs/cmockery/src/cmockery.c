@@ -1493,7 +1493,7 @@ static LONG WINAPI exception_filter(EXCEPTION_POINTERS *exception_pointers) {
 void vprint_message(const char* const format, va_list args) {
 	char buffer[1024];
 	vsnprintf(buffer, sizeof(buffer), format, args);
-	printf(buffer);
+	printf("%s", buffer);
 #ifdef _WIN32
 	OutputDebugString(buffer);
 #endif // _WIN32
